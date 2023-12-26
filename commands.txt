@@ -1,0 +1,38 @@
+ g++ -pthread -o tracker tracker.cpp 
+./tracker tracker_ip_port.txt 1
+
+g++ -pthread -o peer peer.cpp 
+./peer 127.1.1.10 2212 tracker_ip_port.txt 1
+
+./peer 127.9.23.1 2022 tracker_ip_port.txt 1
+./peer 127.2.1.10 2024 tracker_ip_port.txt 1
+
+signup user1 1
+login user1 1
+create_group group1 
+
+
+signup user2 1
+login user2 1
+list_group
+join_group group1
+
+
+list_request group1
+accept_request group1 user2
+upload_file sample.txt group1
+upload_file sample.jpeg group1
+upload_file sample.mpga group1
+upload_file sample.mp4 group1
+
+
+download_file group1 sample.txt /home/sandesh/Downloads/cnlab/new_downloads/current_download.txt
+download_file group1 sample.jpeg /home/sandesh/Downloads/cnlab/new_downloads/current_download.jpeg
+download_file group1 sample.mpga /home/sandesh/Downloads/cnlab/new_downloads/current_download.mpga
+download_file group1 sample.mp4 /home/sandesh/Downloads/cnlab/new_downloads/current_download.mp4
+
+
+
+
+
+
